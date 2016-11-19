@@ -1,4 +1,4 @@
 I love you
 learn git
 I am IT
-git tracks changes
+git tracks changes of files
