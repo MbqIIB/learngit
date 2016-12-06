@@ -1,0 +1,28 @@
+---
+- name: Add Elasticsearch apt key.
+  apt_key:
+    url: http://packages.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: Add filebeat repository.
+  apt_repository:
+    repo: 'deb https://packages.elastic.co/beats/apt stable main'
+    state: present
+
+- name: Check if filebeat is already installed.
+  stat: path=/etc/init.d/filebeat
+  register: filebeat_installed
+
+- name: Update apt cache if repository just added.
+  apt: update_cache=yes
+  when: filebeat_installed.stat.exists == false
+
+- name: Install filebeat.
+  apt: pkg=filebeat state=present
+
+# See: http://goo.gl/cz9Lnd
+- name: Install filebeat init script.
+  copy:
+    src: filebeat.deb.init
+    dest: /etc/init.d/filebeat
+    mode: 0755

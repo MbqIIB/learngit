@@ -1,0 +1,24 @@
+---
+# Variables listed here are applicable to all host groups
+
+flag: king
+javaflag: java
+tech: php
+damn: '-'
+git: git
+package_dir: /srv/deploy/
+project_dir: /srv/www/
+git_commit: 084295f64f4cb953744a8dd71d9abe1c549a0109
+king_gw_path: /srv/www/king-gw/
+http_port: 80
+repository_gw: git@git.magedu.com:php/king-gw.git
+repository_cp: git@git.magedu.com:php/king-cp.git
+
+# java project
+java_settle_package_dir: /opt/java/
+java_settle_project_dir: /opt/webapps
+java_package_dir: /opt/java
+java_project_dir: /opt/webapps
+repository_java: git@git.magedu.com:release-java/release
+repository_java_settle: git@git.magedu.com:release-java/release-settle.git
+repository_java_order: git@git.magedu.com:release-java/release-order.git

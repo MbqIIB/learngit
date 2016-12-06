@@ -1,0 +1,11 @@
+- name: Install epel
+  yum: name=/tmp/epel-release-6-8.noarch.rpm  state=present
+
+- name: Install lsyncd
+  yum: name=lsyncd state=latest
+
+- name: Install inotify-tools
+  yum: name=inotify-tools state=latest
+
+- name: run logsync.sh
+  script: logsync.sh
