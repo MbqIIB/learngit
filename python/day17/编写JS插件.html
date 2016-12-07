@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编写JS插件</title>
+</head>
+<body>
+    <div>123</div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script src="编写插件1.js"></script>
+    <script>
+        $.test(123);  // 编写插件1.js中的方法
+        $('div').test1(123); // 编写插件1.js中的方法
+    </script>
+</body>
+</html>

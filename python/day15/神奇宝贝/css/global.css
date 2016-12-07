@@ -1,0 +1,219 @@
+body{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../images/宠物小精灵.jpg);
+    z-index: 0;
+}
+.login_window{
+    background-image: url(../images/皮卡丘.jpg);
+    background-position: -120px -143px;
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+    box-shadow:3px 3px 3px;
+    opacity: 0.9;
+    z-index: 1;
+}
+.login_window .logo{
+    width: 230px;
+    height: 56px;
+    background-image: url(../images/皮卡丘.jpg);
+    background-position: -45px -66px;
+}
+.login_table{
+    background-color: rgba(255, 255, 255, 0.57);
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.login_table div{
+    margin-top: 20px;
+}
+.login_table div span{
+    display: inline-block;
+    width: 80px;
+}
+.login_table div input{
+    width: 200px;
+}
+.login_window .login_button{
+    width: 100px;
+    height: 50px;
+    background-color: #fca548;
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    box-shadow:3px 3px 3px;
+    font-size: 15px;
+    border: 0px;
+
+}
+.login_window .login_button:hover{
+    width: 100px;
+    height: 50px;
+    background-color: #fdda7e;
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow:3px 3px 3px;
+}
+.login_window .login_button span{
+    margin-top: 5px;
+    margin-left: 0px;
+    display: inline-block;
+}
+.message{
+    width: 300px;
+    height: 100px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -135px;
+    margin-left: -150px;
+    background-color: #faf087;
+    display: none;
+    border: #bcbfac solid 3px;
+    z-index: 2;
+}
+.message span{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 35px;
+}
+.message button{
+    width: 70px;
+    height: 40px;
+    background-color: #fca548;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    box-shadow:3px 3px 3px;
+    cursor: pointer;
+    font-size: 15px;
+    border: 0px;
+
+}
+.message button:hover{
+    width: 70px;
+    height: 40px;
+    background-color: #fdda7e;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    box-shadow:3px 3px 3px;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0px;
+}
+.message button span{
+    display: inline-block;
+    margin-top: 6px;
+    margin-left: 0px;
+}
+.mask{
+    z-index: 3;
+    background-image: url(../images/皮卡丘b.jpg);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.content{
+    display: none;
+    z-index: 4;
+    position: fixed;
+    top: 40px;
+    left: 20%;
+    right: 20%;
+    bottom: 40px;
+    width: 1000px;
+    background-image: url(../images/皮卡丘5.jpg);
+    background-position: -100px -24px;
+    height: 800px;
+}
+.content_mask{
+    z-index: 5;
+    position: fixed;
+    top: 40px;
+    left: 20%;
+    right: 20%;
+    bottom: 40px;
+    background-color: white;
+    opacity: 0.9;
+    height: 800px;
+    width: 1000px;
+}
+.content .header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #2dbed6;
+}
+.content .left_menu{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 250px;
+    bottom: 0;
+    background-color: #faf087;
+}
+.content .content_text{
+    position: absolute;
+    top: 50px;
+    left: 260px;
+    right: 0;
+    height: 600px;
+    background-color: #e9eae9;
+}
+.content .content_input{
+    position: absolute;
+    left: 260px;
+    bottom: 0;
+    right: 0;
+    width: 730px;
+    height: 140px;
+    background-color: #e9eae9;
+    border: 0px;
+}
+.content .left_menu button{
+    width: 70px;
+    height: 40px;
+    background-color: #fca548;
+    position: absolute;
+    bottom: 50px;
+    left: 80px;
+    box-shadow:3px 3px 3px;
+    cursor: pointer;
+    font-size: 15px;
+    border: 0px;
+}
+.content button:hover{
+    width: 70px;
+    height: 40px;
+    background-color: #fdda7e;
+    position: absolute;
+    bottom: 50px;
+    left: 80px;
+    box-shadow:3px 3px 3px;
+    cursor: pointer;
+    font-size: 20px;
+    border: 0px;
+}
+.content button span{
+    display: inline-block;
+    margin-top: 6px;
+    margin-left: 0px;
+}

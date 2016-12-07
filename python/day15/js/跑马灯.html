@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跑马灯</title>
+</head>
+<body>
+    <div id="msg" style="display: inline-block;background-color: #C81623; color: white; font-size: 50px;">恭喜梁先森当上CEO,赢取白富美! &nbsp;&nbsp;&nbsp;</div>
+
+    <script>
+        // 计时器,毫秒
+        setInterval("f1()", 100);
+
+        function f1() {
+//            js 获取一个id='msg'的标签
+            var tag = document.getElementById("msg");
+//            获取标签内容
+            var text = tag.innerText;
+
+            var a = text.charAt(0);
+            var sub = text.substring(1,text.length);
+
+            var new_str = sub + a;
+            tag.innerText= new_str;
+        }
+
+    </script>
+</body>
+</html>

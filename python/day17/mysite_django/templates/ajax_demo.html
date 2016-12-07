@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax_demo</title>
+</head>
+<body>
+    <div>
+        <p>用户名: <input type="text" id="username"/></p>
+    </div>
+    <div>
+        <p>密码: <input type="password" id="password"/></p>
+    </div>
+    <input type="button" value="提交" onclick="SubmitForm();" />
+
+    <script src="/static/js/jquery-1.12.4.js"></script>
+    <script>
+        function SubmitForm() {
+            $.ajax({
+                url: '/web/ajax_demo/',
+                type: 'POST',
+                data: {'user': $('#username').val(), 'password': $('#password').val()},
+                dataType: 'json',   // 规定响应数据格式
+                success: function (result) {
+                    if (result.status){
+                        location.href = '/index/';
+                    }else {
+                        alert(result.message);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

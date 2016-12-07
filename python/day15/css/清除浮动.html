@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动</title>
+    <style>
+        .left{
+            float: left;
+        }
+        .clearfix:after{
+            content: '.';
+            clear:both;
+            display: block;
+            visibility: hidden;
+            height: 0;
+        }
+        .icon{
+            display: inline-block;
+            border-top: 15px solid red;
+            border-right: 15px solid green;
+            border-left: 15px solid yellow;
+            border-right: 15px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">ddd</div>
+    <div class="c2">888</div>
+
+    <div style="background-color: red" class="chearfix">
+        <div class="left" style="height: 100px;background-color: green">1</div>
+        <div class="left">2</div>
+    </div>
+
+    <!--<div class="icon"></div>-->
+</body>
+</html>

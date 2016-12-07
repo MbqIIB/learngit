@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data</title>
+    <link href="/static/css/data.css" rel="stylesheet">
+    <link href="/static/plugin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/plugin/font-awesome-4.6.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">CMDB</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index/">主页</a></li>
+                    <li class="active"><a href="/data/1/">DATA</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多内容 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/register/">注册</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">其他 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="#">Overview</a></li>
+                    <li class="active"><a href="#">First Data</a></li>
+                    <li class="active"><a href="#">Last Data</a></li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h2 class="sub-header ">Last Data</h2>
+                <button id="add" type="button" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;增加</button>
+                <button id="del" type="button" class="btn btn-danger"><i class="fa fa-minus-circle" aria-hidden="true"></i>&nbsp;删除</button>
+                <button id="all" type="button" class="btn btn-warning"><i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;全选</button>
+                <button id="reverse" type="button" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;反选</button>
+                <button id="cancel" type="button" class="btn btn-primary"><i class="fa fa-ban" aria-hidden="true"></i>&nbsp;取消</button>
+                <button id="edit" type="button" class="btn btn-success"><i class="fa fa-share" aria-hidden="true"></i>&nbsp;进入编辑模式</button>
+                {#                <button type="button" class="btn btn-danger"><i class="fa fa-reply" aria-hidden="true"></i>&nbsp;退出编辑模式</button>#}
+                <center><span id="message">{{ result.message }}</span></center>
+            </div>
+
+            <div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        {#                    <table class="table table-bordered">#}
+                        <thead>
+                            <tr>
+                                <th>选择</th>
+                                <th>ID</th>
+                                <th>Hostname</th>
+                                <th>Address</th>
+                                <th>Port</th>
+                                <th>Status</th>
+                                <th>查看详情</th>
+                                <!--<th>删除</th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for line in data %}
+                                <tr>
+                                    <td class="edit_select">
+                                        <input type="checkbox" />
+                                    </td>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td name="nid" style="display: none">{{ line.nid }}</td>
+                                    <td name="hostname" editEnable="true" edType="text">{{ line.hostname }}</td>
+                                    <td name="address" editEnable="true" edType="text">{{ line.address }}</td>
+                                    <td name="port" editEnable="true" edType="text">{{ line.port }}</td>
+                                    <td name="status" editEnable="true" edType="select">{{ line.status }}</td>
+                                    <td><a>点击查看</a></td>
+                                    <!--<td><i style="font-size: 18px;" class="fa fa-times" aria-hidden="true" onclick=""></i></td>-->
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <nav id="page-nav">
+                        <ul class="pager">
+                            <li class="previous"><a class="extend" href="#">&larr; Prev</a></li>
+                            {% for num in page_list %}
+                                <a href="/data/{{ num }}/" class="page-number">{{ num }}</a>
+                            {% endfor %}
+                            <li class="next"><a class="extend" href="#">Next &rarr;</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="/static/js/jquery-1.12.4.js"></script>
+<script src="/static/plugin/bootstrap/js/bootstrap.js"></script>
+<script src="/static/js/table_from.js"></script>
+
+<script>
+    $('.dropdown-toggle').dropdown()
+</script>
+</body>
+</html>

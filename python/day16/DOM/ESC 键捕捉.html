@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function HideModal() {
+            var t1 = document.getElementById('shade');
+            var t2 = document.getElementsByTagName('modal');
+            t1.classList.add('hide');
+            t2.classList.add('hide');
+        }
+        window.onkeydown = function(event) {
+            //console.log(event);
+            if(event.keyCode == 27) {
+                HideModal();
+            }
+        }
+    </script>
+</body>
+</html>

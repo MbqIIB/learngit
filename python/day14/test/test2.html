@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test2</title>
+</head>
+<body>
+    <form action="http://192.168.11.88:8000/index/" method="get" enctype="multipart/form-data">
+        <input type="text" name="user" value="123"/>
+        <input type="password" name="password" />
+        男<input type="radio" name="gender" value="1" checked="checked"/>
+        女<input type="radio" name="gender" value="2"/>
+        <p>
+            篮球<input name="favor" type="checkbox" value="1"/>
+            篮球1<input name="favor" type="checkbox" value="2" checked="checked"/>
+            篮球2<input name="favor" type="checkbox" value="3"/>
+        </p>
+        <p>文件:
+            <input type="file" name="file"/>
+        </p>
+        <p>
+            <select name="city">
+                <option value="上海">上海</option>
+                <option value="上海1" selected="selected">上海1</option>
+                <option value="上海2">上海2</option>
+            </select>
+            <select name="city">
+                <option value="北京">北京</option>
+                <option value="北京1">北京1</option>
+                <option value="北京2">北京2</option>
+            </select>
+        </p>
+        <input type="submit" value="提交"/>
+    </form>
+
+    <div style="border: 1px solid; display: inline-block;">
+        <span style="display: block;width: 25px;height: 25px;">-</span>
+        <input type="text" value="1" style="border-top: 0px;border-bottom: 0px"/>
+        <span>+</span>
+    </div>
+
+
+</body>
+</html>

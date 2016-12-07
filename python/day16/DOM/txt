@@ -1,0 +1,54 @@
+DOM
+    查找:
+        直接查找
+        间接查找
+        --getElementById
+        --getElementsByTagName
+    操作:
+        值
+            innerText
+            innerHtml
+            value
+        class:
+            className
+            classList.add
+            classList.remove
+        样式:
+            tag.style. =
+        属性:
+            setAttribute
+            getAttribute
+            removeAttribute
+        标签:
+            创建标签
+
+
+jquery
+    在写app的时候不用
+
+    查找:
+        选择器:
+            ID选择器
+            标签选择器
+            类选择器
+            组合选择器
+            层级选择器
+
+            $('input:eq(1), #i1 .item')
+        筛选器:
+            $('#i1').find('.item')
+            $('#i1').eq(1)
+    操作:
+        css
+        属性
+        文本操作
+
+    扩展:
+        $.login
+        From表单验证
+
+    Ajax:
+        偷偷发请求,页面不刷新
+
+
+

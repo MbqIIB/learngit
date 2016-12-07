@@ -1,0 +1,19 @@
+面向对象:
+    多态(多种形态,多种类型):
+
+    def func(arg):
+        print(arg)
+
+    func(1)
+    func("alex")
+
+
+
+    在C#/JAVA
+
+    arg参数,必须是A类或者A类的子类类型
+
+    def func(A arg):
+        print(arg)
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        span{
+            background-color: red;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <form action="/index/" method="POST">
+        <p>
+            <input type="radio" name="user_type" value="0" />普通用户
+        </p>
+        <p>
+            <input type="radio" name="user_type" value="1">超级用户
+        </p>
+        <span>{{ error.error.user_type.0.message }}</span>
+
+        <p>
+            title: <input type="text" name="title" />
+        </p>
+        <span>{{ error.error.title.0.message }}</span>
+        <p>
+            memo: <input type="text" name="memo" />
+        </p>
+        <span>{{ error.error.memo.0.message }}</span>
+        <p>
+            phone: <input type="text" name="phone" />
+        </p>
+        <span>{{ error.error.phone.0.message }}</span>
+        <p>
+            email: <input type="text" name="email" />
+        </p>
+        <span>{{ error.error.email.0.message }}</span>
+        <p>
+        <input type="file" name="up_file"/>
+        </p>
+
+    </form>
+</body>
+</html>

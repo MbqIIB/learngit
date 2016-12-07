@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>用户注册</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/register.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <form id="form_01" method="POST" action="/register/" class="form-signin" role="form">
+        <h2 class="form-signin-heading">用户注册</h2>
+        <p class="item">
+            <span>用户名:</span>
+            <input type="text" name="user" label="用户名" require="ture" class="form-control" placeholder="User name" required autofocus>
+        </p>
+        <p class="item">
+            <span>密码:</span>
+            <input type="password" name="password" require="ture" label="密码" min-len="8" class="form-control" placeholder="Password" required>
+        </p>
+        <p class="item">
+            <span>E-mail:</span>
+            <input type="text" name="mail" label="邮箱" require="ture" class="form-control" placeholder="****@163.com" required>
+        </p>
+        <p class="item">
+            <span>QQ:</span>
+            <input type="text" name="qq" class="form-control" min-len="5" placeholder="123456" required>
+        </p>
+        <p class="item">
+            <span>Tel:</span>
+            <input type="text" name="tel" label="手机号" require="ture"  phone="true" class="form-control" placeholder="18515112222" required>
+        </p>
+        <div class="checkbox">
+            <label><input type="checkbox" value="remember-me">我已阅读并同意</label>
+            <a href='#'>《用户注册协议》</a>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">同意以上协议并注册</button>
+    </form>
+</div> <!-- /container -->
+
+    <script src="/static/js/jquery-1.12.4.js"></script>
+    <script src="/static/js/table_verify.js"></script>
+    <script>
+        $(function(){
+            $.valid('#form_01');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批量操作</title>
+    <style>
+        .ip{
+            font-size: 18px;
+        }
+        .port{
+            font-size: 18px;
+        }
+        .status{
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>选择</th>
+                <th>主机</th>
+                <th>端口</th>
+                <th>状态</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td class="ip">
+                    <span>1.1.1.1</span>
+                </td>
+                <td class="port">
+                    <span>22</span>
+                </td>
+                <td class="status">
+                    <span>在线</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td class="ip">
+                    <span>2.2.2.2</span>
+                </td>
+                <td class="port">
+                    <span>22</span>
+                </td>
+                <td class="status">
+                    <span>在线</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td class="ip">
+                    <span>3.3.3.3</span>
+                </td>
+                <td class="port">
+                    <span>22</span>
+                </td>
+                <td class="status">
+                    <span>在线</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" value="全选" onclick="CheckAll()"/>
+    <input type="button" value="取消" onclick="CancleAll()"/>
+    <input type="button" value="反选" onclick="ReverseAll()"/>
+    <input type="button" value="编辑" onclick="Editor(this)"/>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        function CheckAll() {
+            $('#tb input[type="checkbox"]').prop('checked',true);
+        }
+        
+        function CancleAll() {
+            $('#tb input[type="checkbox"]').prop('checked',false);
+
+        }
+        
+        function ReverseAll() {
+            $('#tb input[type="checkbox"]').each(function(i){
+                // this  当前标签
+                // $(this)当前标签的jQuery对象
+                if($(this).prop('checked')){
+                    $(this).prop('checked', false);
+                }else{
+                    $(this).prop('checked', true);
+                }
+            });
+        }
+        
+        function Editor(ths) {
+            if ($(ths).attr('editor') == 'true') {
+                $('#tb input[type="checkbox"]').each(function(i){
+                    // this  当前标签
+                    // $(this)当前标签的jQuery对象
+                    if($(this).prop('checked')){
+                        var ip_txt = $(this).parent().siblings('.ip').children().val();
+                        $(this).parent().siblings('.ip').empty();
+                        $(this).parent().siblings('.ip').append("<span></span>");
+                        $(this).parent().siblings('.ip').children().text(ip_txt);
+
+                        var port_txt = $(this).parent().siblings('.port').children().val();
+                        $(this).parent().siblings('.port').empty();
+                        $(this).parent().siblings('.port').append("<span></span>");
+                        $(this).parent().siblings('.port').children().text(port_txt);
+
+                        var status_txt = $(this).parent().siblings('.status').find('select option:selected').attr('value');
+                        $(this).parent().siblings('.status').empty();
+                        $(this).parent().siblings('.status').append("<span></span>");
+                        $(this).parent().siblings('.status').children().text(status_txt);
+                    }
+                });
+
+                $(ths).attr('editor','false');
+            }else {
+                $(ths).attr('editor','true');
+
+                $('#tb input[type="checkbox"]').each(function(i){
+                    // this  当前标签
+                    // $(this)当前标签的jQuery对象
+                    if($(this).prop('checked')){
+                        var ip_txt = $(this).parent().siblings('.ip').text().trim();
+                        $(this).parent().siblings('.ip').empty();
+                        $(this).parent().siblings('.ip').append("<input type='text'/>");
+                        $(this).parent().siblings('.ip').children().attr('value',ip_txt);
+
+                        var port_txt = $(this).parent().siblings('.port').text().trim();
+                        $(this).parent().siblings('.port').empty();
+                        $(this).parent().siblings('.port').append("<input type='text'/>");
+                        $(this).parent().siblings('.port').children().attr('value',port_txt);
+
+                        $(this).parent().siblings('.status').empty();
+                        $(this).parent().siblings('.status')
+                                .append('<select><option value="在线">在线</option><option value="离线">离线</option></select>');
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

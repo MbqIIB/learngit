@@ -1,0 +1,26 @@
+<!--引用母板,先要写上这一行,写上母板得名称-->
+{% extends 'master_templates.html' %}
+
+
+
+{% block css %}
+    <style></style>
+{% endblock %}
+
+
+
+{% block body %}
+    <ul>
+    {% for item in user_list %}
+        <li>{{ item.username }},{{ item.salary }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+
+
+{% block js %}
+    <script></script>
+{% endblock %}
+
+

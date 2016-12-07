@@ -1,0 +1,116 @@
+<!-- 指定标准规则 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 自闭合标签,默认后面加个'/' -->
+    <!-- 指定字符编码 -->
+    <meta charset="UTF-8" />
+    <!--每2秒自动刷新页面-->
+    <!--<meta http-equiv="Refresh" Content="2; />-->
+    <!--五秒种之后跳转-->
+    <!--<meta http-equiv="Refresh" Content="5; Url=http://www.autohome.com.cn" />-->
+    <!--关键字信息,提高爬虫,搜索效率-->
+    <meta name="keywords" content="星际2,星际老男孩,专访,F91,小色,JOY" >
+    <!--网站描述-->
+    <meta name="desription" content="博客园是一个面线开发者的...." >
+    <!--IE 兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--页面小图标-->
+    <link rel="shortcut icon" href="image/favicon.ico">
+    <title>test1</title>
+</head>
+<body>
+    <!--内联标签,受内容影响-->
+    <div style="background-color: red;">12</div>
+    <!--块级标签整块都收影响-->
+    <span style="background-color: green;">12</span>
+    <!--小于号,空格,大于号,html中特殊符号用特殊代码表示-->
+    &lt;小于代替尖括号&nbsp;空格a&gt;大于号
+
+
+    <p>段落标签</p>
+    <p>br标签换行<br/>dfsdfassdfsdf</p>
+    <p>sdfsdsdfsfsdfsdfsdfdf</p>
+
+    <p><a href="http://www.baidu.com">跳转,默认当前标签跳转</a></p>
+    <p><a href="http://www.baidu.com" target="_blank">跳转,新建标签跳转</a></p>
+    <p><a href="#i1">跳转书签1(寻找页面中id="i1"的标签,移动页面内容至标签位置)</a></p>
+
+    <p><a href="#i2">跳转书签2</a></p>
+
+
+    <h1>标题1</h1>
+    <h2>标题2</h2>
+    <h3>标题3</h3>
+    <h4>标题4</h4>
+    <h5>标题5</h5>
+    <h6>标题6</h6>
+
+    <form>
+        <input type="text" />
+    </form>
+
+    <!--提交表单的数据都要放在from标签里面-->
+    <form>
+    <div style="border: 1px solid red">
+        <!--输入文本-->
+        <p>邮箱: <input type="email"/></p>
+        <p>用户名: <input type="text"/> </p>
+        <!--输入密文-->
+        <p>密码: <input type="password"/> </p>
+        <p>性别:(单选框)
+            <br/>男 <input type="radio" name="性别"/>
+            <br/>女 <input type="radio" name="性别"/>
+        </p>
+        <p>爱好:(复选框)
+            <br/> 男1<input type="checkbox"/>
+            <br/> 男2<input type="checkbox"/>
+            <br/> 男3<input type="checkbox"/>
+            <br/> 男4<input type="checkbox"/>
+            <br/> 男5<input type="checkbox"/>
+        </p>
+        <p>城市:(下拉框)
+            <select multiple size="5">
+                <option>上海</option>
+                <option>北京</option>
+                <option>北京</option>
+                <option>北京</option>
+                <option>北京</option>
+                <option>北京</option>
+                <option>北京</option>
+                <option>北京</option>
+                <option>广州</option>
+            </select>
+            <select>
+                <optgroup label="湖南省">
+                <option>上海</option>
+                <option>北京</option>
+                </optgroup>
+                <optgroup label="云南省">
+                <option>广州</option>
+                </optgroup>
+            </select>
+            <select>
+                <option>上海</option>
+                <option>北京</option>
+                <option>广州</option>
+            </select>
+        </p>
+        <p>文件:
+            <input type="file"/>
+        </p>
+        <!--多行文本标签-->
+        <p> 备注:<textarea></textarea></p>
+        <input type="submit" value="提交"/>
+        <input type="button" value="按钮"/>
+        <input type="reset" value="重置"/>
+    </div>
+    </form>
+
+
+
+
+    <div id="i1" style="height: 500px">书签1</div>
+    <div id="i2" style="height: 500px">书签2</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{#导入模块里面自己定义得方法#}
+{% load xx %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template测试</title>
+</head>
+<body>
+    将item值当作参数传递给f2方法
+    {{ item|f2  }}
+    额外给f2再传递一个参数
+    {{ item|f2:"123"  }}
+
+    {% if k1|f3 %}
+    <h1>True</h1>
+    {% else %}
+    <h1>False</h1>
+    {% endif %}
+
+
+{#    自己定义的simple_tag方法执行方法#}
+    {% f2 1 2 3 %}
+</body>
+</html>

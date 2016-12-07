@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手动点赞</title>
+    <style>
+        .item{
+            padding: 50px;
+            position: relative;
+        }
+    </style>
+    <script>
+        function Favor(ths) {
+            // ths => this => 当前触发时间的标签
+            var top = 49;
+            var left = 71;
+            var opsition = 1;
+            var fontSize = 18;
+
+            var tag = document.createElement('span');
+            tag.innerText = '+1';
+            tag.style.position = 'absolute';
+            tag.style.color = 'green';
+            tag.style.top = top + "px";
+            tag.style.left = left + "px";
+            tag.style.opacity = opsition;
+            tag.style.fontSize = fontSize + "px";
+            ths.parentElement.appendChild(tag);
+
+            var interval = setInterval(function () {
+                top -= 10;
+                left += 10;
+                fontSize +=5;
+                opsition -= 0.1;
+
+                tag.style.top = top + "px";
+                tag.style.left = left + "px";
+                tag.style.opacity = opsition;
+                tag.style.fontSize = fontSize + "px";
+
+                if(opsition <= 0) {
+                    clearInterval(interval);
+                    ths.parentElement.removeChild(tag);
+                }
+            }, 50);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="item">
+        <!--this 表示点击这个事件的元素-->
+        <a onclick="Favor(this)">赞1</a>
+    </div>
+    <div class="item">
+        <a onclick="Favor(this)">赞2</a>
+    </div>
+    <div class="item">
+        <a onclick="Favor(this)">赞3</a>
+    </div>
+</body>
+</html>

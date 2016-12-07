@@ -1,0 +1,6 @@
+2016-07-06 12:01:37 PM - root - DEBUG :  debug
+2016-07-06 12:01:37 PM - root - INFO :  info
+2016-07-06 12:01:37 PM - root - WARNING :  warning
+2016-07-06 12:01:37 PM - root - ERROR :  error
+2016-07-06 12:01:37 PM - root - CRITICAL :  critical
+2016-07-06 12:01:37 PM - root - DEBUG :  log

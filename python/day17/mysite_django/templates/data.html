@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data</title>
+    <link href="/static/plugin/bootstrap/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">CMDB</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/index/">主页</a></li>
+                    <li><a href="/data/">DATA</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多内容 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/register/">注册</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">其他 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="#">Overview</a></li>
+    {#                <li><a href="#">Reports</a></li>#}
+    {#                <li><a href="#">Analytics</a></li>#}
+                    <li><a href="#">Last</a></li>
+                </ul>
+    {#            <ul class="nav nav-sidebar">#}
+    {#                <li><a href="">Nav item</a></li>#}
+    {#                <li><a href="">Nav item again</a></li>#}
+    {#                <li><a href="">One more nav</a></li>#}
+    {#                <li><a href="">Another nav item</a></li>#}
+    {#                <li><a href="">More navigation</a></li>#}
+    {#            </ul>#}
+    {#            <ul class="nav nav-sidebar">#}
+    {#                <li><a href="">Nav item again</a></li>#}
+    {#                <li><a href="">One more nav</a></li>#}
+    {#                <li><a href="">Another nav item</a></li>#}
+    {#            </ul>#}
+            </div>
+            <div>
+
+                <h2 class="sub-header">Last Data</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+{#                        <tr>#}
+{#                            <th>用户</th>#}
+{#                            <th>QQ</th>#}
+{#                            <th>E-mail</th>#}
+{#                            <th>Tel</th>#}
+{#                        </tr>#}
+{#                        </thead>#}
+{#                    #}
+{#                        <tbody>#}
+{#                        {% for line in data %}#}
+{#                            <tr>#}
+{#                                <td>{{ line.user }}</td>#}
+{#                                <td>{{ line.qq }}</td>#}
+{#                                <td>{{ line.mail }}</td>#}
+{#                                <td>{{ line.tel }}</td>#}
+{#                            </tr>#}
+{#                        {% endfor %}#}
+{#                        </tbody>#}
+
+                        <tr>
+                            <th>ID</th>
+                            <th>用户</th>
+                            <th>E-mail</th>
+                            <th>查看详情</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for item in user_list %}
+                            <tr>
+                                <td>{{ item.id }}</td>
+                                <td>{{ item.username }}</td>
+                                <td>{{ item.email }}</td>
+                                <td><a href="/detail/{{ item.id }}/">查看详细</a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

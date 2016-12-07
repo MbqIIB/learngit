@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon</title>
+    <link rel="shortcut icon" href="images/pokemon.ico">
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <script type="text/javascript" src="js/login.js"></script >
+</head>
+
+<body>
+    <div class="login_window">
+        <div class="logo"></div>
+        <div class="login_table">
+            <div>
+                <span>用户名 :</span>
+                <input id="username" type="text"/>
+            </div>
+            <div>
+                <span>密码 :</span>
+                <input type="password"/>
+            </div>
+        </div>
+        <button class="login_button" onclick="alert_msg()">
+                <span>登陆</span>
+        </button>
+    </div>
+    <div class="message">
+        <span class="msg">欢迎您,神奇宝贝训练家</span>
+        <button onclick="content()">
+            <span>确定</span>
+        </button>
+    </div>
+    <div class="mask"></div>
+    <div class="content">
+        <div class="content_mask">
+            <div class="header"></div>
+            <div class="left_menu">
+                <button class="quit_button" onclick="quit()">
+                    <span>退出</span>
+                </button>
+            </div>
+            <div class="content_text"></div>
+            <textarea class="content_input"></textarea>
+        </div>
+    </div>
+</body>
+</html>
